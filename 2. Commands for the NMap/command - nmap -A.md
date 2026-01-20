@@ -1,7 +1,5 @@
 
-
-```
-                                                                                                                    
+   ```                                                                                                                 
 ┌──(kali㉿kali)-[~]
 └─$ nmap -A 192.168.133.129
 Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-20 00:23 -0500
@@ -130,7 +128,4 @@ HOP RTT      ADDRESS
 OS and Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 35.70 seconds
                                                                                                                     
-┌──(kali㉿kali)-[~]
-└─$ nmap -A 192.168.133.129
 ```
-
