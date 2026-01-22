@@ -1,11 +1,61 @@
 
-   ```                                                                                                                 
+To find a target's IP address, you need different approaches depending on the context. Here are common methods in Kali Linux:
+
+# 1. Network Scanning (Local Network)
+
+# Nmap - Aggressive scan 
+
+Using nmap (Network discovery)
+
+```
+# Scan entire local subnet
+sudo nmap -sn 192.168.1.0/24
+
+# Or specific range
+sudo nmap -sn 192.168.1.1-254
+```
+
+# Using arp-scan
+
+```
+# Scan local network
+sudo arp-scan --localnet
+
+# More detailed scan
+sudo arp-scan -I eth0 --localnet
+
+                   
+┌──(kali㉿kali)-[/]
+└─$ sudo arp-scan -I eth0 -l                
+Interface: eth0, type: EN10MB, MAC: 00:0c:xx:xx:xx:xx, IPv4: 192.168.133.128
+Starting arp-scan 1.10.0 with 256 hosts (https://github.com/royhills/arp-scan)
+192.168.133.1   00:50:56:xx:xx:xx      VMware, Inc.
+192.168.133.2   00:50:5:xx:xx:xx       VMware, Inc.
+192.168.133.254 00:50::xx:xx:xx       VMware, Inc.
+
+3 packets received by filter, 0 packets dropped by kernel
+Ending arp-scan 1.10.0: 256 hosts scanned in 2.418 seconds (105.87 hosts/sec). 3 responded
+ ```                                                                                                                   
+
+
+It was most f the attackers to gain the data from the target system and also  know the system ports, version, services & etc. 
+
+ 
+```                                                                                                                 
 ┌──(kali㉿kali)-[~]
 └─$ nmap -A 192.168.133.129
 Starting Nmap 7.98 ( https://nmap.org ) at 2026-01-20 00:23 -0500
 Nmap scan report for 192.168.133.129
 Host is up (0.013s latency).                                                                                        
 Not shown: 977 closed tcp ports (reset)                                                                             
+```
+
+## ports and state service 
+
+to know the data about the system which port is open 
+
+
+```
 PORT     STATE SERVICE     VERSION                                                                                  
 21/tcp   open  ftp         vsftpd 2.3.4                                                                             
 |_ftp-anon: Anonymous FTP login allowed (FTP code 230)                                                              
